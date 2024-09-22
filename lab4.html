@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INST377 Lab 4</title>
+    <style>
+        .section {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="page-heading">Lab 4 - Gurlal Dhaliwal</h1>
+
+    <div class="section">
+
+        <form>
+
+            <label>Enter Your Name:</label>
+            <input type="text" id="name" required>
+            <button type="button" onclick="alertMe()">Alert Me</button>
+
+        </form>
+
+    </div>
+
+    <script>        
+        function alertMe() {
+
+            const name = document.getElementById('name').value;
+            alert(`Hi ${name}!`);
+
+        }
+    </script>
+
+    <div class="section">
+
+        <button onclick="changeColor()">Change Color</button>
+
+    </div>
+
+    <script>
+        
+        let blue = true;
+        function changeColor() {
+            document.body.style.backgroundColor = blue ? 'green' : 'blue';
+            if (blue == false) {
+                blue = true
+            }
+            else {
+                blue = false
+            }
+            
+        }
+
+    </script>
+
+    <div class="section">
+
+        <form id>
+
+            <label >Enter Some Text:</label>
+            <input type="text" id="text-input">
+            <button type="button" onclick="validateText()">Validate Text</button>
+
+        </form>
+
+    </div>
+
+    <script>
+            function validateText() {
+                const text = document.getElementById('text-input').value;
+                const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validation.test(text)) {
+                    alert("special characters!");
+                }
+            }
+    </script>
+
+    <div class="section">
+
+        <button onclick="addText()">Add Text</button>
+
+    </div>
+
+    <script>
+
+        function addText() {
+            const heading = document.getElementById('page-heading');
+            heading.textContent += ' Add Text';
+        }
+
+    </script>
+
+</body>
+</html>
